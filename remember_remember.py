@@ -11,9 +11,9 @@ def get_encrypted_message(image_path: str) -> str:
     image = PIL.Image.open(image_path, 'r')
     pixels = image.load()
     width, height = image.size
-    black_pixels = [(col, row) for col in range(width) for row in range(height) if pixels[col, row] == 1]
+    black_pixels = [row for col in range(width) for row in range(height) if pixels[col, row] == 1]
     string = ''
-    return string.join(chr(pixel[1]) for pixel in black_pixels)
+    return string.join(chr(pixel) for pixel in black_pixels)
 
 
 if __name__ == '__main__':
