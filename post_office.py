@@ -79,7 +79,8 @@ class PostOffice:
         :param text_message:Search string in body and title of messages.
         :return:A list of messages in which the string appears.
         """
-        return [{message['title']:message['body']} for message in self.boxes[user_name]if text_message in message['title'] or text_message in message['body']]
+        return [{message['title']:message['body']} for message in self.boxes[user_name]if text_message in
+                message['title'] or text_message in message['body']]
 
 
 if __name__ == '__main__':
