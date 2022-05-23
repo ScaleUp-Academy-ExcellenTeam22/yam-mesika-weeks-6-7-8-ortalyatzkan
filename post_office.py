@@ -39,11 +39,11 @@ class PostOffice:
             user_box.append(message_details)
         return self.message_id
 
-    def read_message(self, user_name: str, message: str) -> dict:
+    def read_message(self, user_name: str, message: int) -> dict:
         """
         A function that returns a message and updates that a message has been read.
         :param user_name:Name of the user who received the message.
-        :param message:The message to read.
+        :param message:The num of message to read.
         :return:The message.
         """
         self.boxes[user_name][message]['is_read'] = True
