@@ -11,7 +11,7 @@ class PostOffice:
         self.message_id = 0
         self.boxes = {user: [] for user in usernames}
 
-    def send_message(self, sender, recipient, title_of_message, message_body, urgent=False):
+    def send_message(self, sender: str, recipient: str, title_of_message: str, message_body: str, urgent=False) -> int:
         """Send a message to a recipient.
 
         :param str sender: The message sender's username.
@@ -39,7 +39,7 @@ class PostOffice:
             user_box.append(message_details)
         return self.message_id
 
-    def read_message(self, user_name, message):
+    def read_message(self, user_name: str, message: str) -> dict:
         """
         A function that returns a message and updates that a message has been read.
         :param user_name:Name of the user who received the message.
@@ -49,7 +49,7 @@ class PostOffice:
         self.boxes[user_name][message]['is_read'] = True
         return {self.boxes[user_name][message]['title']: self.boxes[user_name][message]['body']}
 
-    def amount_of_messages_read(self, user_name):
+    def amount_of_messages_read(self, user_name: str) -> int:
         """
         A function that returns the amount of messages that have already been read.
         :param user_name: Name of the user who received the messages.
